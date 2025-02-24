@@ -1,50 +1,85 @@
-# React + TypeScript + Vite
+# Noh-Toh Webapp
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Overview
 
-Currently, two official plugins are available:
+本アプリは **React + TypeScript + Vite** を使用して開発されており、CSS ライブラリとして **shadcn/ui** を採用しています。
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Features
 
-## Expanding the ESLint configuration
+- **React + TypeScript** による型安全な開発
+- **Vite** による高速ビルド
+- **shadcn/ui** を活用したモダンな UI デザイン
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## Setup
 
-- Configure the top-level `parserOptions` property like this:
+### Prerequisites
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+- **Node.js v19.1.0** 以上
+- **tailwindcss v4.0.6** 以上
+
+### Installation
+
+```sh
+# リポジトリをクローン
+git clone https://github.com/your-repo/project-name.git
+cd project-name
+
+# 依存関係をインストール
+yarn install  # または npm install
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+### Development
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
+```sh
+# 開発サーバーを起動
+yarn dev  # または npm run dev
 ```
+
+### Build
+
+```sh
+# 本番環境用のビルド
+yarn build  # または npm run build
+```
+
+### Lint & Format
+
+```sh
+# コードのフォーマット適用
+yarn format  # または npm run format
+
+# Lintチェック
+yarn lint  # または npm run lint
+```
+
+## Project Structure
+
+```
+nohtoh-webapp/
+├── src/
+│   ├── assets/  # コンテンツ（背景、ロゴ画像、フォント）
+│   ├── components/  # UIコンポーネント
+│   ├── pages/       # ページコンポーネント
+│   ├── lib/       # カスタムライブラリ
+│   ├── main.tsx     # エントリーポイント
+│   └── App.tsx      # ルートコンポーネント
+├── public/          # 静的ファイル
+├── package.json     # 依存関係とスクリプト
+└── README.md        # 本ファイル
+```
+
+## Dependencies
+
+主要な依存パッケージ:
+
+- **React**
+- **TypeScript**
+- **Vite**
+- **@radix-ui**
+- **tailwind**
+
+## License
+
+## Author
+
+[otaka44](https://github.com/otaka44)

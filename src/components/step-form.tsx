@@ -26,15 +26,15 @@ export const questions = [
       "無心に縦スクロール。はたまた横スクロールで時間を無駄にしていませんか？",
     default: 12,
   },
+  // {
+  //   id: 4,
+  //   question: "1日のTV視聴時間は？",
+  //   type: "number",
+  //   description: "まだテレビを見ている人は。",
+  //   default: 0,
+  // },
   {
     id: 4,
-    question: "1日のTV視聴時間は？",
-    type: "number",
-    description: "まだテレビを見ている人は。",
-    default: 0,
-  },
-  {
-    id: 5,
     question: "普段聴いている音楽の音圧レベルは？",
     type: "number",
     description:
@@ -42,7 +42,7 @@ export const questions = [
     default: 60,
   },
   {
-    id: 6,
+    id: 5,
     question: "1日で音楽を聴く時間は？",
     type: "number",
     description: "音楽は作業効率を半減させます。ながら音楽は推奨できません。",
@@ -50,7 +50,7 @@ export const questions = [
   },
   // 必要に応じて追加
 ];
-const StepForm: React.FC = () => {
+const StepForm = ({ ...props }: { onSubmit?: (val: number[]) => void }) => {
   const [currentStep, setCurrentStep] = useState(0);
   const [answers, setAnswers] = useState<number[]>(
     questions?.map((q) => q?.default ?? 0)
@@ -81,6 +81,10 @@ const StepForm: React.FC = () => {
 
   const handleBack = () => {
     if (currentStep > 0) setCurrentStep(currentStep - 1);
+  };
+
+  const handleSubmit = () => {
+    props.onSubmit && props.onSubmit(answers);
   };
 
   return (
@@ -163,8 +167,8 @@ const StepForm: React.FC = () => {
 
             <Button
               size="lg"
-              onClick={handleNext}
-              disabled={currentStep === questions.length - 1}
+              onClick={handleSubmit}
+              // disabled={currentStep === questions.length - 1}
               className="w-full bg-[#e94709] text-white hover:bg-red-400"
             >
               許しを請う

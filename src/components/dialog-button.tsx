@@ -1,3 +1,4 @@
+import React from "react";
 import { Button } from "@/components/ui/button";
 import {
   Dialog,
@@ -11,6 +12,8 @@ import {
 interface DialogButtonProps {
   children?: React.ReactElement;
   title?: string;
+  open?: boolean;
+  handleOpen?: (open: boolean) => void;
 }
 
 export default function DialogButton({
@@ -18,7 +21,7 @@ export default function DialogButton({
   ...props
 }: DialogButtonProps) {
   return (
-    <Dialog>
+    <Dialog open={props.open} onOpenChange={props.handleOpen}>
       <DialogTrigger asChild>
         <Button variant="default" className="bg-white hover:bg-gray-200">
           {props?.title}

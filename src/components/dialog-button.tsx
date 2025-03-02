@@ -23,7 +23,7 @@ export default function DialogButton({
   return (
     <Dialog open={props.open} onOpenChange={props.handleOpen}>
       <DialogTrigger asChild>
-        <Button variant="default" className="bg-white hover:bg-gray-200">
+        <Button variant="default" className="bg-rose-500 hover:bg-rose-700 text-white">
           {props?.title}
         </Button>
       </DialogTrigger>

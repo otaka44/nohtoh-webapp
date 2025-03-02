@@ -90,12 +90,12 @@ const StepForm = ({ ...props }: { onSubmit?: (val: number[]) => void }) => {
   return (
     <div className="flex flex-col justify-center bg-white p-4">
       {currentStep < questions.length ? (
-        <div className="text-center">
+        <div className="text-center text-zinc-600">
           <h2 className="text-xl mb-4">{questions[currentStep].question}</h2>
           <div className="m-[1rem]">{questions[currentStep].description}</div>
           <div className="flex justify-center mb-4">
             <Button
-              className="hover:bg-gray-200"
+              className="text-white bg-zinc-400 hover:bg-zinc-600"
               size="lg"
               onClick={handleDecrement}
             >
@@ -108,7 +108,7 @@ const StepForm = ({ ...props }: { onSubmit?: (val: number[]) => void }) => {
               onChange={handleChangeInput}
             />
             <Button
-              className="hover:bg-gray-200"
+              className="text-white bg-zinc-400 hover:bg-zinc-600"
               size="lg"
               onClick={handleIncrement}
             >
@@ -117,7 +117,7 @@ const StepForm = ({ ...props }: { onSubmit?: (val: number[]) => void }) => {
           </div>
           <div className="flex justify-between mt-10">
             <Button
-              className="hover:bg-gray-200"
+              className="text-white bg-zinc-400 hover:bg-zinc-600"
               size="lg"
               onClick={handleBack}
               disabled={currentStep === 0}
@@ -128,7 +128,7 @@ const StepForm = ({ ...props }: { onSubmit?: (val: number[]) => void }) => {
               {currentStep + 1} / {questions.length}
             </span>
             <Button
-              className="hover:bg-gray-200"
+              className="text-white bg-zinc-400 hover:bg-zinc-600"
               size="lg"
               onClick={handleNext}
               // disabled={currentStep === questions.length - 1}
@@ -138,7 +138,7 @@ const StepForm = ({ ...props }: { onSubmit?: (val: number[]) => void }) => {
           </div>
         </div>
       ) : (
-        <div className="text-center">
+        <div className="text-center text-zinc-600">
           <h2 className="text-xl mb-4">以下の内容で懺悔しますか？</h2>
           <div className="m-[1rem]">入力内容を確認してください。</div>
           <div className="my-[4rem] mx-[1rem]">
@@ -157,7 +157,7 @@ const StepForm = ({ ...props }: { onSubmit?: (val: number[]) => void }) => {
           </div>
           <div className="flex justify-between space-x-4">
             <Button
-              className="hover:bg-gray-200"
+              className="text-white bg-zinc-400 hover:bg-zinc-600"
               size="lg"
               onClick={handleBack}
               disabled={currentStep === 0}
@@ -169,7 +169,7 @@ const StepForm = ({ ...props }: { onSubmit?: (val: number[]) => void }) => {
               size="lg"
               onClick={handleSubmit}
               // disabled={currentStep === questions.length - 1}
-              className="w-full bg-[#e94709] text-white hover:bg-red-400"
+              className="w-full bg-rose-500 hover:bg-rose-700 text-white"
             >
               許しを請う
             </Button>

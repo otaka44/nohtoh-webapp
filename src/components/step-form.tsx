@@ -1,5 +1,6 @@
 // src/components/StepForm.tsx
 import React, { useState } from "react";
+import { LoaderCircleIcon } from "lucide-react";
 import { Button } from "@/components/ui/button"; // shadcn/uiのButtonコンポーネント
 // src/data/questions.ts
 export const questions = [
@@ -50,7 +51,12 @@ export const questions = [
   },
   // 必要に応じて追加
 ];
-const StepForm = ({ ...props }: { onSubmit?: (val: number[]) => void }) => {
+const StepForm = ({
+  ...props
+}: {
+  onSubmit?: (val: number[]) => void;
+  isLoading?: boolean;
+}) => {
   const [currentStep, setCurrentStep] = useState(0);
   const [answers, setAnswers] = useState<number[]>(
     questions?.map((q) => q?.default ?? 0)
@@ -171,7 +177,11 @@ const StepForm = ({ ...props }: { onSubmit?: (val: number[]) => void }) => {
               // disabled={currentStep === questions.length - 1}
               className="w-full bg-rose-500 hover:bg-rose-700 text-white"
             >
-              許しを請う
+              {props.isLoading ? (
+                <LoaderCircleIcon className="animate-spin" />
+              ) : (
+                "許しを請う"
+              )}
             </Button>
           </div>
         </div>

@@ -15,6 +15,8 @@ export const postRgbData = async (data: PostData[]) => {
       // "ngrok-skip-browser-warning": "true",
     },
     body: JSON.stringify({ value: data }),
-  });
-  return response;
+  })
+  const respData = await response.json()
+  return respData
+  // return response;
 };

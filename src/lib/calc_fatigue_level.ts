@@ -106,7 +106,7 @@ class BrainFatigueLevel {
       return this.getColor(2);
     } else if (fl < 0.84) {
       return this.getColor(1);
-    } else if (fl >= 0.72) {
+    } else if (fl >= 0.84) {
       return this.getColor(0);
     }
     return this.getColor(4);

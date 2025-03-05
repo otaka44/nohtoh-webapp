@@ -1,5 +1,4 @@
 import { useState } from "react";
-// import reactLogo from "./assets/react.svg";
 import brainLumpLogo from "./assets/brain-lump-logo.svg";
 import "./App.css";
 import DialogButton from "@/components/dialog-button";

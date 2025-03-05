@@ -1,20 +1,7 @@
 @import "tailwindcss";
 
-@font-face {
-  font-family: "YujiSyuku";
-  src: local("YujiSyuku-Regular"),
-    url("./assets/fonts/Yuji_Syuku/YujiSyuku-Regular.ttf");
-}
-
-@font-face {
-  font-family: "Noto_Sans_JP";
-  src: local("Noto_Sans_JP"),
-    url("./assets/fonts/Noto_Sans_JP/NotoSansJP-VariableFont_wght.ttf");
-}
-
 :root {
-  font-family: YujiSyuku, Noto_Sans_JP, Inter, system-ui, Avenir, Helvetica,
-    Arial, sans-serif;
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
 

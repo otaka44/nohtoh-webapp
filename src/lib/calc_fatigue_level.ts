@@ -39,24 +39,24 @@ class BrainFatigueLevel {
     green: number;
     blue: number;
   } {
-    const alpha = 0.04;
+    const alpha = 0.06;
     const beta = 0.05;
     const gamma = 0.05;
     const exponent =
       -alpha * this.tWake - beta * this.tWork - gamma * this.tScreenTime;
     const result = 1 - Math.exp(exponent);
 
-    if (result <= 0.625) {
+    if (result <= 0.72) {
       return this.getColor(5);
-    } else if (result < 0.625) {
+    } else if (result < 0.72) {
       return this.getColor(4);
-    } else if (result < 0.7) {
+    } else if (result < 0.75) {
       return this.getColor(3);
-    } else if (result < 0.775) {
+    } else if (result < 0.79) {
       return this.getColor(2);
-    } else if (result < 0.85) {
+    } else if (result < 0.84) {
       return this.getColor(1);
-    } else if (result >= 0.85) {
+    } else if (result >= 0.84) {
       return this.getColor(0);
     }
     // resultが比較できない場合、getColor(5)を返す

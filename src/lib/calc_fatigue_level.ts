@@ -70,17 +70,17 @@ class BrainFatigueLevel {
     const k = 3.952847075210474e-10;
     const fl = k * this.tMusic * Math.pow(10, this.soundLevel / 10);
 
-    if (fl <= 0.36) {
+    if (fl <= 0.0001) {
       return this.getColor(5);
-    } else if (fl < 0.48) {
+    } else if (fl < 0.0015) {
       return this.getColor(4);
-    } else if (fl < 0.6) {
+    } else if (fl < 0.01) {
       return this.getColor(3);
-    } else if (fl < 0.72) {
+    } else if (fl < 0.03) {
       return this.getColor(2);
-    } else if (fl < 0.84) {
+    } else if (fl < 0.3) {
       return this.getColor(1);
-    } else if (fl >= 1.0) {
+    } else if (fl >= 0.3) {
       return this.getColor(0);
     }
     return this.getColor(4);

@@ -8,7 +8,8 @@ export const questions = [
     id: 1,
     question: "1日の睡眠時間は？",
     type: "number",
-    description: "ショートスリーパー？そんなのまやかしです。",
+    description:
+      "睡眠不足の人が多いことによる日本の経済損失は3兆円にも上るらしいですよ。",
     default: 8,
   },
   {
@@ -16,7 +17,7 @@ export const questions = [
     question: "1日の作業時間は？",
     type: "number",
     description:
-      "残業しても何も得られません。１時間の価値を見出せない人はまだ人生の価値を見つけていない人です。",
+      "残業時間は有意義な時間？。「人生を一時間でも無駄にする人は人生の価値をまだ発見していない人だ。」という格言は胸に刺さります。",
     default: 8,
   },
   {
@@ -24,7 +25,7 @@ export const questions = [
     question: "1日のスクリーンタイムは？",
     type: "number",
     description:
-      "無心に縦スクロール。はたまた横スクロールで時間を無駄にしていませんか？",
+      "無心に縦スクロール。はたまた横スクロールで時間を無駄にしていませんか？ショート動画の中毒性があなたから集中力を奪います。",
     default: 12,
   },
   // {
@@ -36,17 +37,18 @@ export const questions = [
   // },
   {
     id: 4,
-    question: "普段聴いている音楽の音圧レベルは？",
+    question: "普段聴いている音楽の音圧レベル (dB) は？",
     type: "number",
     description:
-      "電車で音漏れしていませんか？オープンイヤーで爆音は公害です。か？",
+      "85デシベル(dB)以上の大きな音を聞き続けていると「騒音性難聴」になってしまいます。地下鉄車内は100dBもあるそうですよ。",
     default: 60,
   },
   {
     id: 5,
     question: "1日で音楽を聴く時間は？",
     type: "number",
-    description: "音楽は作業効率を半減させます。ながら音楽は推奨できません。",
+    description:
+      "聞く音楽のテンポや曲調、ジャンルによって作業効率が上がったり・下がったりするそうです。あなただけの作業効率プレイリストを作ってみては。",
     default: 6,
   },
   // 必要に応じて追加
@@ -157,7 +159,9 @@ const StepForm = ({
                   questions[idx].question
                 }:`}</div>
                 <div className="text-right col-span-1">{`${ans}`}</div>
-                <div className="text-right col-span-2">hours</div>
+                <div className="text-right col-span-2">
+                  {idx == 3 ? "dB" : "hours"}
+                </div>
               </div>
             ))}
           </div>
